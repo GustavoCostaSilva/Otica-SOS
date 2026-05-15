@@ -1,36 +1,31 @@
-# Ótica SOS — Vitrine Digital & Painel Admin
+# Ótica SOS - App de Vitrine
 
-Sistema de vitrine digital interativa para TVs e painel administrativo desenvolvido em Flutter. Conta com atualizações em tempo real (Supabase), previsão do tempo local e feed de notícias dinâmico (G1 Ceará).
+App em Flutter para exibir ofertas, clima local e elogios na TV da loja, junto com um painel de administração básico.
 
-## 🚀 Como Executar o Projeto
+## Setup Inicial
 
-Este projeto utiliza variáveis de ambiente para proteger as credenciais do banco de dados (Supabase). **Você precisa do arquivo `.env` para rodar a aplicação.**
+O banco de dados (Supabase) não tá versionado no git por segurança. Antes de rodar, você precisa do arquivo `.env` com as chaves.
 
-### 1. Configuração do Ambiente (.env)
-1. Solicite o arquivo `.env` ao desenvolvedor ou crie um arquivo chamado `.env` na raiz do projeto.
-2. O arquivo deve seguir o formato documentado em `.env.example`:
-```env
-SUPABASE_URL=https://[SEU_PROJETO].supabase.co
-SUPABASE_ANON_KEY=[SUA_CHAVE_ANONIMA]
+1. Pega o arquivo `.env` que te enviei ou cria um na pasta raiz do projeto.
+2. O formato dele tá no `.env.example`:
+```
+SUPABASE_URL=...
+SUPABASE_ANON_KEY=...
 ```
 
-### 2. Rodando a Aplicação
-Com o `.env` posicionado na raiz do projeto, instale as dependências e rode a aplicação (recomendado rodar no Chrome para visualização da TV):
-
+Depois disso é só instalar os pacotes e rodar normal:
 ```bash
 flutter pub get
 flutter run -d chrome
 ```
 
-## ⚙️ Acesso ao Painel Admin
-A rota do painel administrativo é `/admin`. 
-Na tela inicial da vitrine, dê um duplo clique no texto "ÓTICA SOS" no topo esquerdo, ou acesse diretamente na URL (ex: `localhost:5555/#/admin`).
+## Painel Admin
 
-*Credenciais de acesso devem ser solicitadas ao administrador do sistema.*
+Pra acessar a administração:
+- Vai na rota `/admin` (ex: `localhost:5555/#/admin`)
+- Ou dá 2 cliques na logo "ÓTICA SOS" no canto superior esquerdo da vitrine principal.
 
-## 🛠 Tecnologias Utilizadas
-- **Flutter / Dart** (Interface UI / UX responsiva)
-- **Supabase** (Backend as a Service, Realtime DB, Auth)
-- **Riverpod** (Gerenciamento de Estado)
-- **GoRouter** (Roteamento de Telas)
-- **Open-Meteo API** (Clima) & **RSS2JSON API** (Notícias)
+As credenciais do painel eu te passei junto com o arquivo .env.
+
+---
+Stack: Flutter, Riverpod, GoRouter, Supabase.
